@@ -1,0 +1,20 @@
+Source: lsmashsource
+Section: libs
+Priority: optional
+Maintainer: Xinyue Lu <i@7086.in>
+Bugs: https://github.com/yuuki-deb/lsmashsource-yuuki/issues
+Homepage: https://github.com/HomeOfAviSynthPlusEvolution/L-SMASH-Works
+Standards-Version: 4.5.0
+Build-Depends: debhelper-compat (= 12),
+ libavcodec-dev, liblsmash-dev, libavformat-dev, libswscale-dev, libavresample-dev,
+ avisynthplus-yuuki-dev,
+ liblsmash-yuuki-dev
+
+Package: dualsynth-lsmashsource-yuuki
+Architecture: any
+Multi-Arch: same
+Depends: ${shlibs:Depends}, ${misc:Depends}
+Provides: dualsynth-lsmashsource, lsmashsource
+Conflicts: dualsynth-lsmashsource, lsmashsource
+Description: Plugin for AviSynthPlus and VapourSynth: lsmashsource
+ A source plugin for AviSynth+ and VapourSynth.

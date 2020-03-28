@@ -1,0 +1,14 @@
+#!/usr/bin/make -f
+
+include /usr/share/dpkg/architecture.mk
+
+%:
+	dh $@
+
+override_dh_auto_install:
+	dh_auto_install
+	chmod -x debian/dualsynth-lsmashsource-yuuki/usr/lib/$(DEB_HOST_MULTIARCH)/dualsynth/liblsmashsource.so
+	mkdir debian/dualsynth-lsmashsource-yuuki/usr/lib/$(DEB_HOST_MULTIARCH)/avisynth
+	mkdir debian/dualsynth-lsmashsource-yuuki/usr/lib/$(DEB_HOST_MULTIARCH)/vapoursynth
+	ln -s ../dualsynth/liblsmashsource.so debian/dualsynth-lsmashsource-yuuki/usr/lib/$(DEB_HOST_MULTIARCH)/avisynth/
+	ln -s ../dualsynth/liblsmashsource.so debian/dualsynth-lsmashsource-yuuki/usr/lib/$(DEB_HOST_MULTIARCH)/vapoursynth/
